@@ -1,0 +1,5 @@
+#!/bin/bash
+
+PS1_USER="$PINK\u$RESET"
+
+PS1="$PS1_USER@$PS1_HOSTNAME\n($PS1_PATH)$PS1_PROMPT "

@@ -1,0 +1,3 @@
+FIND=gfind
+
+export FIND

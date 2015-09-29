@@ -1,0 +1,16 @@
+#!/bin/bash
+
+GREEN="\[\e[0;32m\]"
+RESET="\[\e[0m\]"
+TEAL="\[\e[0;36m\]"
+YELLOW="\[\033[1;33m\]"
+PINK="\[\033[1;35m\]"
+
+PS1_PATH="$GREEN\W$RESET"
+PS1_USER="$TEAL\u$RESET"
+PS1_PROMPT="$YELLOW\$(__git_ps1) ->$RESET"
+
+PS1_LONGPATH="$GREEN\w$RESET"
+PS1="$PS1_PATH$PS1_USER$PS1_PROMPT "
+
+PS1_HOSTNAME="$TEAL\H$RESET"

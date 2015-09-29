@@ -1,0 +1,30 @@
+#!/bin/bash
+
+(uname -a | grep Darwin > /dev/null) && OS=osx || OS=linux
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+function loadfile() {
+  if [ -e $1 ]; then
+    for y in `ls $1`; do
+      if [ -d $1 ]; then
+        if [ 'true' = "$BASHRC_VERBOSE" ]; then
+          echo "[bashrc] loading $1/$y"
+        fi
+        source $1/$y
+      fi
+      if [ -f $1 ]; then
+        if [ 'true' = "$BASHRC_VERBOSE" ]; then
+          echo "[bashrc] loading $1"
+        fi
+        source $1
+      fi
+    done
+  fi
+}
+
+loadfile $DIR/common/
+loadfile $DIR/os/$OS/
+loadfile $DIR/hosts/$HOSTNAME/
+loadfile $DIR/users/$USER/
+loadfile $DIR/hosts/$HOSTNAME/users/$USER/
