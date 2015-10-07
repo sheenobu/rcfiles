@@ -22,7 +22,7 @@
 
             Plugin 'tpope/vim-fugitive'
 
-			Plugin 'scrooloose/nerdtree'
+            Plugin 'scrooloose/nerdtree'
 
             " All of your Plugins must be added before the following line
             call vundle#end()            " required
@@ -42,7 +42,6 @@
 " }
 
 " General {
-      set background=dark
       syntax on
       set mouse=a
 
@@ -54,7 +53,7 @@
       set virtualedit=onemore
 
       " Setting up directories {
-	  "     set backup 
+      "     set backup 
             set undofile
             set undolevels=1000
             set undoreload=1000
@@ -63,6 +62,7 @@
 
 " Vim UI {
       color zellner
+      set background=dark
       set tabpagemax=15
       set showmode
 
@@ -126,12 +126,12 @@
 " }
 
 " Plugins {
-"	NerdTree {
-		autocmd StdinReadPre * let s:std_in=1
-		autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-		map <C-n> :NERDTreeToggle<CR>
-		let g:NERDTreeDirArrows = 1
-		let g:NERDTreeDirArrowExpandable = '▸'
-		let g:NERDTreeDirArrowCollapsible = '▾'
-	" }
+"    NerdTree {
+        autocmd StdinReadPre * let s:std_in=1
+        autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+        map <C-n> :NERDTreeToggle<CR>
+        let g:NERDTreeDirArrows = 1
+        let g:NERDTreeDirArrowExpandable = '▸'
+        let g:NERDTreeDirArrowCollapsible = '▾'
+    " }
 " }
