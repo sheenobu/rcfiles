@@ -1,0 +1,23 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+
+alias rc-files='cd ~/.config/rc-files'
+
+# standard vi is a bit limited and doesn't load vimrc
+alias vi=vim
+
+# startx with the LENV set to 'dock'
+alias dockstartx="LENV=dock startx"
+
+# yay colored bash prompt
+PS1="\[\e[1;30m\]\u@laptop\[\e[0m\] \[\e[0;32m\]\w\[\e[0m\] \$ "
+
+# programs like git won't pick up EDITOR if it's not exported.
+EDITOR=vim
+export EDITOR

@@ -1,0 +1,3 @@
+startup_message off
+caption always "%{= ..}%-w%{= G}%n %t%{-}%+w %-= @%H - %D %d %M - %c"
+vbell off

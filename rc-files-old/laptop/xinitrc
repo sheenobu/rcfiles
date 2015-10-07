@@ -1,0 +1,23 @@
+
+# Startup Conky with the default conkyrc
+conky &
+# Startup Tint2 with the default tint2 config
+tint2 &
+# Turn off the trackpad, if it exists
+/usr/local/bin/trackpad-toggle.sh
+
+# Set the resolution if we are attached to the
+# Docking station.
+if [ $LENV == 'dock' ]; then
+    bash ~/.screenlayout/work-resolution.sh
+    # Set background
+    hsetroot -center ~/.config/bg.jpg
+else
+    # Set background
+    hsetroot -full ~/.config/bg.jpg
+fi
+
+# Turn off terminal bell
+xset -b
+# Start openbox
+dbus-launch openbox
