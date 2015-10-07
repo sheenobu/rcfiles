@@ -11,7 +11,9 @@ function loadfile() {
         if [ 'true' = "$BASHRC_VERBOSE" ]; then
           echo "[bashrc] loading $1/$y"
         fi
-        source $1/$y
+        if [ -f $1/$y ]; then
+          source $1/$y
+        fi
       fi
       if [ -f $1 ]; then
         if [ 'true' = "$BASHRC_VERBOSE" ]; then
