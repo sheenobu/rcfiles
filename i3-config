@@ -167,3 +167,11 @@ bar {
     position top
 
 }
+
+bindcode $mod+95 exec xbacklight - 10
+bindcode $mod+96 exec xbacklight + 10
+
+bindcode $mod+119 exec i3lock -c 000000
+
+bindcode $mod+67 exec pactl set-sink-volume 1 -7%
+bindcode $mod+68 exec pactl set-sink-volume 1 +7%
