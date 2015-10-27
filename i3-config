@@ -175,3 +175,5 @@ bindcode $mod+119 exec i3lock -c 000000
 
 bindcode $mod+67 exec pactl set-sink-volume 1 -7%
 bindcode $mod+68 exec pactl set-sink-volume 1 +7%
+
+exec --no-startup-id nm-applet
