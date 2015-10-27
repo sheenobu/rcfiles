@@ -43,7 +43,7 @@
 
 " General {
       syntax on
-      set mouse=a
+      "set mouse=a
 
       scriptencoding utf-8
 
