@@ -29,6 +29,12 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec urxvt
 
+# start chrome
+bindsym $mod+n exec google-chrome
+
+# start nautilus
+bindsym $mod+m exec nautilus --no-desktop
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
