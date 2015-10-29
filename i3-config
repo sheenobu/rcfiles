@@ -187,3 +187,4 @@ bindcode 122 exec pactl set-sink-volume 1 -7%
 exec --no-startup-id nm-applet
 exec --no-startup-id setxkbmap -option caps:super
 exec --no-startup-id xflux -z 30309
+exec --no-startup-id ~/.dropbox-dist/dropboxd
