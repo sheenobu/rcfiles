@@ -125,6 +125,25 @@
       autocmd FileType c,cpp,go,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 " }
 
+"Keybindings {
+	nnoremap <F5> "=strftime("%c")<CR>P
+	inoremap <F5> <C-R>=strftime("%c")<CR>
+
+	nnoremap <F7> "=strftime("%c")<CR>P
+	inoremap <F7> <C-R>=strftime("%c")<CR>
+" }
+
+"Copy + Paste {
+	" Copy to X CLIPBOARD
+	map <leader>cc :w !xsel -i -b<CR>
+	map <leader>cp :w !xsel -i -p<CR>
+	map <leader>cs :w !xsel -i -s<CR>
+	" Paste from X CLIPBOARD
+	map <leader>pp :r!xsel -p<CR>
+	map <leader>ps :r!xsel -s<CR>
+	map <leader>pb :r!xsel -b<CR>
+" }
+
 " Plugins {
 "    NerdTree {
         autocmd StdinReadPre * let s:std_in=1
