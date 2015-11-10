@@ -207,6 +207,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id setxkbmap -option caps:super
 exec --no-startup-id xflux -z 30309 -k 2000
 exec --no-startup-id ~/.dropbox-dist/dropboxd
+exec --no-startup-id feh --bg-center ~/.config/bg.png
 
 # Window colours:
 
