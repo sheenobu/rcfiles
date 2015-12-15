@@ -26,8 +26,8 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec urxvt
 
-# start chrome
-bindsym $mod+n exec google-chrome
+# start firefox
+bindsym $mod+n exec firefox
 
 # start nautilus
 bindsym $mod+m exec nautilus --no-desktop
@@ -154,15 +154,15 @@ bindsym $mod+r mode "resize"
 bar {
 	font pango:Terminus 15
 
-
     strip_workspace_numbers no
     status_command i3status
-	separator_symbol " "
+	separator_symbol "|"
+
     colors {
         # Whole color settings
         background #000000
         statusline #ffffff
-        separator  #666666
+        separator  #777777
 
         # Type             border  background font
         focused_workspace  #008fff #007fff #ffffff
@@ -170,9 +170,9 @@ bar {
         inactive_workspace #333333 #222222 #888888
         urgent_workspace   #aa0000 #990000 #ffffff
     }
+
     # i3bar position
     position top
-
 }
 
 bindcode $mod+95 exec xbacklight - 10
