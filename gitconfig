@@ -2,6 +2,7 @@
 	insteadOf = https://github.com/
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+	unstage = reset HEAD
 	ds = diff --staged
 [user]
 	email = sheena.artrip@gmail.com
