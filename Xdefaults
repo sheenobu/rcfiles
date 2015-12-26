@@ -39,4 +39,4 @@ urxvt.color13: #FFA9FE
 urxvt.color14: #E2E3FE
 urxvt.color15: #FFFFFF
 urxvt.scrollBar: false
-urxvt.font: xft:Terminus:pixelsize=20
+urxvt.font: xft:Terminus:pixelsize=17
