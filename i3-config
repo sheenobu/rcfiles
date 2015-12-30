@@ -178,10 +178,10 @@ bindcode 233 exec xbacklight + 10
 
 bindcode $mod+119 exec i3lock -c 000000
 
-bindcode $mod+67 exec pactl set-sink-volume 1 -7%
-bindcode $mod+68 exec pactl set-sink-volume 1 +7%
-bindcode 123 exec pactl set-sink-volume 1 +7%
-bindcode 122 exec pactl set-sink-volume 1 -7%
+bindcode $mod+67 exec pactl set-sink-volume 1 -4%
+bindcode $mod+68 exec pactl set-sink-volume 1 +4%
+bindcode 123 exec pactl set-sink-volume 1 +4%
+bindcode 122 exec pactl set-sink-volume 1 -4%
 
 
 # looks
