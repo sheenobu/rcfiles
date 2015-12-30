@@ -154,3 +154,7 @@
         let g:NERDTreeDirArrowCollapsible = '▾'
     " }
 " }
+
+
+
+			autocmd BufWritePre *.go call go#fmt#Format(1)
