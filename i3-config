@@ -212,8 +212,8 @@ exec --no-startup-id pulseaudio
 
 # work workspace
 
-	for_window [workspace="1-work" class="Firefox"] floating enable, resize set 750 1024, move position 9px 43px
-	for_window [workspace="1-work" class="URxvt"] floating enable, resize set 1124 1030, move position 777px 43px
+#	for_window [workspace="1-work" class="Firefox"] floating enable, resize set 750 1024, move position 9px 43px
+#	for_window [workspace="1-work" class="URxvt"] floating enable, resize set 1124 1030, move position 777px 43px
 
 for_window [class="conky"] floating enable, move position 1528px 312px, resize set 503 518 
 
