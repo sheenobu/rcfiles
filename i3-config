@@ -28,8 +28,8 @@ mouse_warping output
 # start a terminal
 bindsym $mod+Return exec urxvt
 
-# start firefox
-bindsym $mod+n exec firefox
+# start chromium
+bindsym $mod+n exec chromium
 
 # start nautilus
 bindsym $mod+m exec nautilus --no-desktop
