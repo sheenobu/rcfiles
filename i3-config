@@ -7,16 +7,16 @@ set $mod Mod4
 # -----------------------------------------
 
 # Window border multiplier.
-set $borders    1
+set $borders    0
 
 # Number of pixels to resize by in resize mode.
 set $resize     5
 
 # Set gap sizes. Keep 'gapso' set to 0.
 set $gapso      0
-set $gapsi      12
-set $pgapsi		8
-set $pgapso     32
+set $gapsi      6
+set $pgapsi		4
+set $pgapso     16
 
 for_window [class="Florence"] floating enable
 
