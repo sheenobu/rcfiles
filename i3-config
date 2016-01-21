@@ -173,8 +173,8 @@ bar {
   }
 }
 
-bindcode 232 exec exec-with-msg "Brightness Down" "xbacklight - 10"
-bindcode 233 exec exec-with-msg "Brightness Up" "xbacklight + 10"
+bindcode 232 exec backlight-down
+bindcode 233 exec backlight-up
 
 bindcode $mod+119 exec i3lock -c 000000
 
