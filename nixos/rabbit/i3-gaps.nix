@@ -10,6 +10,9 @@
     i3status  # sys info
     scrot     # for screenshot
 
+    dunst     # for notifications
+    libnotify # for notifications
+
     # xorg.utilmacros
     # xorg.xcursorgen
     # xorg.xcursorthemes
