@@ -216,7 +216,7 @@ exec --no-startup-id dunst -conf ~/.dunstrc
 #	for_window [workspace="1-work" class="URxvt"] floating enable, resize set 1124 1030, move position 777px 43px
 
 for_window [class="conky"] floating enable, move position 1528px 312px, resize set 503 518 
-
+for_window [title="Crypt of the NecroDancer"] floating enable, move position 26px 46px, resize set 1510px 1000px
 
 for_window [title="Timer: Sheena Artrip - Mozilla Firefox"] floating enable
 # Window colours:
