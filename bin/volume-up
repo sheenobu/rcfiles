@@ -1,0 +1,8 @@
+#!/bin/sh
+
+dir=`dirname "$(readlink -f "$0")"`
+. $dir/volume
+
+pactl set-sink-volume 1 +4%
+
+notify-send -t 1000 -u low -a audio "Volume $(getvolume)" 
