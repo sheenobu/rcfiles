@@ -173,16 +173,15 @@ bar {
   }
 }
 
-bindcode 232 exec xbacklight - 10
-bindcode 233 exec xbacklight + 10
+bindcode 232 exec exec-with-msg "Brightness Down" "xbacklight - 10"
+bindcode 233 exec exec-with-msg "Brightness Up" "xbacklight + 10"
 
 bindcode $mod+119 exec i3lock -c 000000
 
-bindcode $mod+67 exec pactl set-sink-volume 1 -4%
-bindcode $mod+68 exec pactl set-sink-volume 1 +4%
-bindcode 123 exec pactl set-sink-volume 1 +4%
-bindcode 122 exec pactl set-sink-volume 1 -4%
-
+bindcode $mod+67 exec exec-with-msg "Volume Up" "pactl set-sink-volume 1 -4%"
+bindcode $mod+68 exec exec-with-msg "Volume Down" "pactl set-sink-volume 1 +4%"
+bindcode 123 exec exec-with-msg "Volume Up" "pactl set-sink-volume 1 +4%"
+bindcode 122 exec exec-with-msg "Volume Down" "pactl set-sink-volume 1 -4%"
 
 # looks
 
