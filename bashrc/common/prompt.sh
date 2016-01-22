@@ -5,6 +5,8 @@ RESET="\[\e[0m\]"
 TEAL="\[\e[0;36m\]"
 YELLOW="\[\033[1;33m\]"
 PINK="\[\033[1;35m\]"
+PURPLE="\[\033[0;33m\]"
+RED="\[\e[0;31m\]"
 
 PS1_PATH="$GREEN\W$RESET"
 PS1_USER="$TEAL\u$RESET"
