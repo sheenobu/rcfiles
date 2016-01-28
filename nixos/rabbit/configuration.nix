@@ -36,7 +36,7 @@
   environment.systemPackages = with pkgs; [
      # Core 
      wget
-     neovim
+     vim
      tmux
      file
      binutils
