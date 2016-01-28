@@ -6,7 +6,7 @@
 	ds = diff --staged
 [user]
 	email = sheena.artrip@gmail.com
-	name = sheenobu
+	name = Sheena Artrip
 [core]
 	excludesfile = /home/sheenobu/.gitignore_global
 [push]
