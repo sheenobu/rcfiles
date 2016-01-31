@@ -19,5 +19,10 @@ function __prompt_command() {
 	  RES=" [$GREEN$EXIT$RESET]"
 	fi
 
-	PS1="$PS1_TIME $PS1_LONGPATH\n$PS1_USER@$PS1_HOSTNAME$RES$PS1_PROMPT "
+	local PS1_ENV=""
+	if [ -n "$name" ]; then
+		PS1_ENV=" [env=$GREEN$name$RESET]"
+	fi
+
+	PS1="$PS1_TIME $PS1_LONGPATH\n$PS1_USER@$PS1_HOSTNAME$RES$PS1_ENV$PS1_PROMPT "
 }
