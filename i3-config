@@ -7,7 +7,7 @@ set $mod Mod4
 # -----------------------------------------
 
 # Window border multiplier.
-set $borders    0
+set $borders    1
 
 # Number of pixels to resize by in resize mode.
 set $resize     5
