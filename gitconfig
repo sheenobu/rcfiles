@@ -4,6 +4,7 @@
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 	unstage = reset HEAD
 	ds = diff --staged
+	st = status --short
 [user]
 	email = sheena.artrip@gmail.com
 	name = Sheena Artrip
