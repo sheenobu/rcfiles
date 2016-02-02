@@ -8,8 +8,9 @@
     ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_4_2;
+    kernelPackages = pkgs.linuxPackages_4_3;
     loader.gummiboot.enable=true;
+    kernelParams = [ "ipv6.disable=1" "pcie_aspm=off" ];
   };
 
   hardware  = {
@@ -20,10 +21,13 @@
     };
   };
 
+  virtualisation.docker.enable = true;
+
   nixpkgs.config.pulseaudio = true;
 
   networking.hostName = "rabbit"; # Define your hostname.
   networking.networkmanager.enable = true;
+  networking.enableIPv6 = false;
 
   i18n = {
      consoleKeyMap = "us";
@@ -34,34 +38,45 @@
   time.timeZone = "America/New_York";
 
   environment.systemPackages = with pkgs; [
-     # Core 
+     # Core
      wget
      vim
      tmux
      file
      binutils
- 
+     unrar
+     autojump
+     docker
+     file
+     mercurial
+     socat
+
+     xorg.xbacklight
+     xorg.xwininfo
+
      # desktop/libs
      gtk
-   
+
      # browsers
      chromium
-     firefox 
+     firefox
 
      # desktop utilities
      compton
      gnome3.nautilus
+     xsel
 
      # programming utilities
      ack
      autojump
-     go 
+     go
      gcc
      git
 
      # media
-     spotify 
+     spotify
      steam
+     wineUnstable
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -69,10 +84,15 @@
   nixpkgs.config.chromium.enablePepperFlash = true;
 
   services = {
+    clamav = {
+      updater.enable = true;
+    };
     xserver = {
       enable = true;
       layout = "us";
       videoDrivers = [ "nvidia" ];
+      displayManager.lightdm.enable = true;
+      displayManager.slim.enable = false;
       synaptics = {
         enable = true;
 
