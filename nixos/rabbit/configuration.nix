@@ -2,7 +2,7 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
       ./i3-gaps.nix
     ];
@@ -17,7 +17,7 @@
     opengl.driSupport32Bit = true;
     pulseaudio = {
       enable = true;
-      support32Bit = true;  
+      support32Bit = true;
     };
   };
 
@@ -40,7 +40,7 @@
   environment.systemPackages = with pkgs; [
      # Core
      wget
-     vim
+     neovim
      tmux
      file
      binutils
@@ -80,7 +80,7 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.chromium.enableWideVine = true; 
+  nixpkgs.config.chromium.enableWideVine = true;
   nixpkgs.config.chromium.enablePepperFlash = true;
 
   services = {
@@ -108,11 +108,11 @@
   users.extraUsers.sheenobu = {
      isNormalUser = true;
      uid = 1000;
-     extraGroups = [ 
-	"wheel" 
-	"video" 
-	"networkmanager" 
-	"docker" 
+     extraGroups = [
+        "wheel"
+        "video"
+        "networkmanager"
+        "docker"
         "audio"
      ];
   };
@@ -123,7 +123,7 @@
    fonts = {
      fontconfig = {
         dpi = 120;
-	enable = true;
+        enable = true;
      };
      enableFontDir = true;
      enableGhostscriptFonts = true;

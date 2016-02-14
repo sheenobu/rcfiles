@@ -23,11 +23,11 @@
         src = pkgs.fetchgit {
             url = "http://github.com/Airblader/i3.git";
             rev = "refs/heads/gaps-next";
-            sha256 = "03kmb0zj4lv90v680gnf4zhrn31ydmmmsj1hw69chm6kg4k3n729";
+            sha256 = "13kz4qk0h8028kvl00ylkhh37gzmddfb4i24snplysm4szyj93b1";
         };
 
 
-        # the i3 package is built for the main release and not the 'next' branch 
+        # the i3 package is built for the main release and not the 'next' branch
         postInstall = ''
 
         '';
