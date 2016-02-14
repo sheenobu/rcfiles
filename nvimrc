@@ -79,18 +79,21 @@ NeoBundleCheck
 
 "Plugin specific" {{{
   "NerdTree" {{{
-    autocmd StdinReadPre * let s:std_in=1
-    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-    map <leader>nn :NERDTreeToggle<CR>
-    map <leader>nf :NERDTreeFind<CR>
+	autocmd StdinReadPre * let s:std_in=1
+	autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+	map <leader>nn :NERDTreeToggle<CR>
+	map <leader>nf :NERDTreeFind<CR>
   "}}}
   "Numbers" {{{
-    set number
+	set number
   "}}}
   "Unite" {{{
-    map <leader>u :Unite<CR>
+	map <leader>u :Unite<CR>
   "}}}
   "Gista" {{{
-    let g:gista#post_private = 1
+	let g:gista#post_private = 1
+  "}}}
+  "Go" {{{
+	let g:go_fmt_command = "goimports"
   "}}}
 "}}}
