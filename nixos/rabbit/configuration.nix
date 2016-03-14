@@ -46,7 +46,6 @@
      binutils
      unrar
      autojump
-     docker
      file
      mercurial
      socat
