@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 {
   imports =
     [
@@ -22,6 +21,7 @@
   };
 
   virtualisation.docker.enable = true;
+  virtualisation.docker.extraOptions = "--dns 8.8.8.8";
 
   nixpkgs.config.pulseaudio = true;
 
