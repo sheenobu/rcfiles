@@ -80,6 +80,8 @@
      wineUnstable
   ];
 
+  environment.variables.EDITOR = "nvim";
+
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.chromium.enableWideVine = true;
   nixpkgs.config.chromium.enablePepperFlash = true;
