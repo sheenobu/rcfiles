@@ -75,7 +75,7 @@
      git
 
      # media
-     spotify
+     #spotify
      steam
      wineUnstable
   ];
