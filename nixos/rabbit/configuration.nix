@@ -65,6 +65,7 @@
      compton
      gnome3.nautilus
      xsel
+     baobab
 
      # programming utilities
      ack
