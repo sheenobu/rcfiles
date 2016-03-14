@@ -5,4 +5,4 @@ dir=`dirname "$(readlink -f "$0")"`
 
 pactl set-sink-volume 1 +4%
 
-notify-send -t 1000 -u low -a audio "Volume $(getvolume)" 
+notify-send -t 100 -u low -a audio "Volume $(getvolume)"
