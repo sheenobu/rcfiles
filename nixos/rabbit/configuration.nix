@@ -49,6 +49,7 @@
      file
      mercurial
      socat
+     dropbox-cli
 
      xorg.xbacklight
      xorg.xwininfo
