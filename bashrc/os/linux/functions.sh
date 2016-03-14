@@ -13,7 +13,7 @@ function catf() {
 }
 
 function vif() {
-  vim `find -iname $1`
+  $EDITOR `find -iname $1`
 }
 
 function grepf() {
