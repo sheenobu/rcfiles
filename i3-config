@@ -10,7 +10,7 @@ set $mod Mod4
 set $borders    1
 
 # Number of pixels to resize by in resize mode.
-set $resize     5
+set $resize     3
 
 # Set gap sizes. Keep 'gapso' set to 0.
 set $gapso      0
@@ -139,10 +139,10 @@ mode "resize" {
         bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
