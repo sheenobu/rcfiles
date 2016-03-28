@@ -1,4 +1,12 @@
 { config, pkgs, ... }:
+let
+    mednaffe = (pkgs.callPackage /etc/nixos/mednaffe.nix {});
+    r8168 = (pkgs.callPackage /etc/nixos/r8168.nix {
+      configFile = "kernel";
+      kernel = pkgs.linux_4_3;
+    });
+    linuxPkgs = pkgs.linuxPackages_4_3;
+in
 {
   imports =
     [
@@ -7,9 +15,11 @@
     ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_4_3;
+    blacklistedKernelModules = [ "r8169" ];
+    extraModulePackages = [ r8168 ];
+    kernelPackages = linuxPkgs;
     loader.gummiboot.enable=true;
-    kernelParams = [ "ipv6.disable=1" "pcie_aspm=off" ];
+    kernelParams = [ "ipv6.disable=1" ]; # "pcie_aspm=off" ];
   };
 
   hardware  = {
@@ -56,6 +66,7 @@
 
      # desktop/libs
      gtk
+     kde4.qtcurve
 
      # browsers
      chromium
@@ -77,7 +88,13 @@
      # media
      #spotify
      steam
+
+     # emulation
      wineUnstable
+     mednaffe
+     linuxPkgs.virtualbox
+
+
   ];
 
   environment.variables.EDITOR = "nvim";
