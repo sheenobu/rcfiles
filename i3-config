@@ -191,7 +191,7 @@ font pango:Terminus 7
 hide_edge_borders   true
 new_float           pixel $borders
 new_window          pixel $borders
-smart_borders       no_gaps
+#smart_borders       no_gaps
 
 # Set initial gaps.
 gaps inner   $gapsi
