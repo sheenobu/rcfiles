@@ -6,10 +6,10 @@ stdenv.mkDerivation rec {
   name = "mednaffe-${version}";
 
   src = fetchFromGitHub {
-	repo = "mednaffe";
-	owner = "AmatCoder";
-	rev = "v${version}";
-	sha256 = "1j4py4ih14fa6dv0hka03rs4mq19ir83qkbxsz3695a4phmip0jr";
+    repo = "mednaffe";
+    owner = "AmatCoder";
+    rev = "v${version}";
+    sha256 = "1j4py4ih14fa6dv0hka03rs4mq19ir83qkbxsz3695a4phmip0jr";
   };
 
   prePatch = ''

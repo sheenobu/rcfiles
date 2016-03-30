@@ -10,19 +10,19 @@ in
 {
   imports =
     [
-      ./hardware-configuration.nix
-      ./i3-gaps.nix
+      /etc/nixos/hardware-configuration.nix
+      /etc/nixos/i3-gaps.nix
     ];
 
   boot = {
     blacklistedKernelModules = [ "r8169" ];
     extraModulePackages = [ r8168 ];
     kernelPackages = linuxPkgs;
-    loader.gummiboot.enable=true;
     kernelParams = [ "ipv6.disable=1" ]; # "pcie_aspm=off" ];
+    loader.gummiboot.enable=true;
   };
 
-  hardware  = {
+  hardware = {
     opengl.driSupport32Bit = true;
     pulseaudio = {
       enable = true;
@@ -30,21 +30,22 @@ in
     };
   };
 
-  virtualisation.docker.enable = true;
-  virtualisation.docker.extraOptions = "--dns 8.8.8.8";
+  virtualisation.docker = {
+    enable = true;
+    extraOptions = "--dns 8.8.8.8";
+  };
 
-  nixpkgs.config.pulseaudio = true;
-
-  networking.hostName = "rabbit"; # Define your hostname.
-  networking.networkmanager.enable = true;
-  networking.enableIPv6 = false;
+  networking = {
+    hostName = "rabbit";
+    networkmanager.enable = true;
+    enableIPv6 = false;
+  };
 
   i18n = {
      consoleKeyMap = "us";
      defaultLocale = "en_US.UTF-8";
   };
 
-  # Set your time zone.
   time.timeZone = "America/New_York";
 
   environment.systemPackages = with pkgs; [
@@ -94,11 +95,11 @@ in
      mednaffe
      linuxPkgs.virtualbox
 
-
   ];
 
   environment.variables.EDITOR = "nvim";
 
+  nixpkgs.config.pulseaudio = true;
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.chromium.enableWideVine = true;
   nixpkgs.config.chromium.enablePepperFlash = true;
@@ -155,6 +156,6 @@ in
        ubuntu_font_family  # Ubuntu fonts
        unifont # some international languages
      ];
-   };
+  };
 
  }
