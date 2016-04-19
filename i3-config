@@ -18,8 +18,6 @@ set $gapsi      12
 set $pgapsi		8
 set $pgapso     32
 
-for_window [class="Florence"] floating enable
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -27,6 +25,9 @@ mouse_warping output
 
 # start a terminal
 bindsym $mod+Return exec urxvt
+
+# start a floating terminal
+bindsym $mod+Shift+Return exec urxvt -name furxvt
 
 # start chromium
 bindsym $mod+n exec chromium
@@ -215,6 +216,12 @@ exec --no-startup-id owncloud
 
 #	for_window [workspace="1-work" class="Firefox"] floating enable, resize set 750 1024, move position 9px 43px
 #	for_window [workspace="1-work" class="URxvt"] floating enable, resize set 1124 1030, move position 777px 43px
+
+for_window [class="Florence"] floating enable
+for_window [class="MPlayer"] floating enable
+for_window [instance="furxvt"] floating enable
+
+for_window [class="Pavucontrol"] floating enable
 
 for_window [class="conky"] floating enable, move position 1528px 312px, resize set 503 518 
 for_window [title="Crypt of the NecroDancer"] floating enable, move position 26px 46px, resize set 1510px 1000px
