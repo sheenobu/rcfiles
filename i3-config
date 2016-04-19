@@ -189,10 +189,10 @@ bindcode 122 exec volume-down
 font pango:Terminus 7
 
 # Window borders:
-hide_edge_borders   true
+hide_edge_borders   none
 new_float           pixel $borders
 new_window          pixel $borders
-#smart_borders       no_gaps
+smart_borders       no_gaps
 
 # Set initial gaps.
 gaps inner   $gapsi
