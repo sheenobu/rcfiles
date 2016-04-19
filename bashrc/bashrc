@@ -1,6 +1,7 @@
 #!/bin/bash
 
 (uname -a | grep Darwin > /dev/null) && OS=osx || OS=linux
+(uname -a | grep NixOS > /dev/null) && OS2=nix || OS2=none
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
@@ -27,6 +28,7 @@ function loadfile() {
 
 loadfile $DIR/common/
 loadfile $DIR/os/$OS/
+loadfile $DIR/os/$OS2/
 loadfile $DIR/hosts/$HOSTNAME/
 loadfile $DIR/users/$USER/
 loadfile $DIR/hosts/$HOSTNAME/users/$USER/
