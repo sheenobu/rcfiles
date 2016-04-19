@@ -8,6 +8,7 @@
 [user]
 	email = sheena.artrip@gmail.com
 	name = Sheena Artrip
+	signingkey = 267F507D
 [core]
 	excludesfile = /home/sheenobu/.gitignore_global
 [push]
@@ -20,3 +21,5 @@
 	postBuffer = 524288000
 [credential]
 	helper = cache --timeout=86400
+[commit]
+	gpgsign = true
