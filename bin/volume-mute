@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ -e /tmp/sink-1-suspended ]; then
+	pactl suspend-sink 1 0 && rm -f /tmp/sink-1-suspended
+	notify-send -t 100 -u low -a audio "Volume Unmuted"
+else
+	pactl suspend-sink 1 1 && touch /tmp/sink-1-suspended
+	notify-send -t 100 -u low -a audio "Volume Muted"
+fi
