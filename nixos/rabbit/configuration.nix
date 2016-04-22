@@ -1,17 +1,16 @@
 { config, pkgs, ... }:
 let
-    mednaffe = (pkgs.callPackage /etc/nixos/mednaffe.nix {});
-    r8168 = (pkgs.callPackage /etc/nixos/r8168.nix {
-      configFile = "kernel";
-      kernel = pkgs.linux_4_3;
-    });
+    mednaffe = (pkgs.callPackage /etc/nixos/mednaffe.nix) {};
+    r8168 = (pkgs.callPackage /etc/nixos/r8168.nix) {
+       kernel = pkgs.linux_4_3;
+    };
     linuxPkgs = pkgs.linuxPackages_4_3;
 in
 {
   imports =
     [
       /etc/nixos/hardware-configuration.nix
-      /etc/nixos/i3-gaps.nix
+      /etc/nixos/desktop.nix
     ];
 
   boot = {
@@ -30,6 +29,7 @@ in
     };
   };
 
+  #virtualisation.virtualbox.host.enable = true;
   virtualisation.docker = {
     enable = true;
     extraOptions = "--dns 8.8.8.8";
@@ -67,7 +67,8 @@ in
 
      # desktop/libs
      gtk
-     kde4.qtcurve
+     arc-gtk-theme
+     gtk-engine-murrine
 
      # browsers
      chromium
@@ -86,18 +87,26 @@ in
      gcc
      git
 
+     python35Packages.awscli
+
      # media
      #spotify
      steam
+     libdvdread
 
      # emulation
-     wineUnstable
      mednaffe
-     linuxPkgs.virtualbox
+     #linuxPkgs.virtualbox
+     wineUnstable
 
+     # network media
+     davfs2
   ];
 
   environment.variables.EDITOR = "nvim";
+  environment.shellInit = ''
+    alias vim=nvim
+  '';
 
   nixpkgs.config.pulseaudio = true;
   nixpkgs.config.allowUnfree = true;
@@ -113,7 +122,7 @@ in
       layout = "us";
       videoDrivers = [ "nvidia" ];
       displayManager.lightdm.enable = true;
-      displayManager.slim.enable = false;
+      displayManager.kdm.enable = false;
       synaptics = {
         enable = true;
 
@@ -126,10 +135,20 @@ in
     };
   };
 
+  users.groups.davfs2.name = "davfs2";
+
+  # may not need a davfs2 user?
+  users.extraUsers.davfs2 = {
+    isNormalUser = false;
+    uid = 1003;
+  };
+
   users.extraUsers.sheenobu = {
      isNormalUser = true;
      uid = 1000;
      extraGroups = [
+        "disk"
+        "davfs2"
         "wheel"
         "video"
         "networkmanager"
@@ -139,7 +158,7 @@ in
   };
 
   # The NixOS release to be compatible with for stateful data such as databases.
-  system.stateVersion = "15.09";
+  system.stateVersion = "16.03";
 
   fonts = {
      fontconfig = {
@@ -158,4 +177,10 @@ in
      ];
   };
 
- }
+  networking.extraHosts =
+    ''
+      192.168.1.42 lemur
+      192.168.1.42 git.lemur
+    '';
+
+}
