@@ -1,0 +1,85 @@
+#---------------------------------------------
+# TINT2 CONFIG FILE
+#---------------------------------------------
+
+#---------------------------------------------
+# BACKGROUND AND BORDER
+#---------------------------------------------
+rounded = 0
+border_width = 2
+background_color = #1A1A1A 0
+border_color = #979797 100
+
+# focused item
+rounded = 0
+border_width = 0
+background_color = #00ccff 50
+border_color = #ffffff 20
+
+# unfocused
+rounded = 0
+border_width = 0
+background_color = #ffffff 10
+border_color = #ffffff 0
+
+# focused desktop
+rounded = 0
+border_width = 2
+background_color = #1A1A1A 0
+border_color = #00ccff 255
+
+
+# clock bg 
+rounded = 0
+border_width = 2
+background_color = #1A1A1A 255
+border_color = #00ccff 255
+
+
+
+#---------------------------------------------
+# PANEL
+#---------------------------------------------
+panel_monitor = all
+panel_position = top right
+panel_size = 50% 28
+panel_margin = 7 4
+panel_padding = 7 0
+font_shadow = 0
+panel_background_id = 0
+
+#---------------------------------------------
+# TASKBAR
+#---------------------------------------------
+taskbar_mode = multi_desktop
+taskbar_padding = 0 0 0
+taskbar_background_id = 1
+taskbar_active_background_id = 4
+
+#---------------------------------------------
+# TASKS
+#---------------------------------------------
+task_icon = 1
+task_text = 0
+task_width = 40
+task_centered = 1
+task_padding = 2 2
+task_font = sans 7
+task_font_color = #ffffff 70
+task_active_font_color = #ffffff 85
+task_background_id = 3
+task_active_background_id = 2
+
+#---------------------------------------------
+# SYSTRAYBAR
+#---------------------------------------------
+systray_padding = 4 2 3
+systray_background_id = 5
+
+#---------------------------------------------
+# MOUSE ACTION ON TASK
+#---------------------------------------------
+mouse_middle = none
+mouse_right = none
+mouse_scroll_up = toggle
+mouse_scroll_down = iconify
