@@ -42,7 +42,7 @@ border_color = #00ccff 255
 #---------------------------------------------
 panel_monitor = all
 panel_position = top right
-panel_size = 50% 28
+panel_size = 40% 28
 panel_margin = 7 4
 panel_padding = 7 0
 font_shadow = 0

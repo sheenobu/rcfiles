@@ -44,7 +44,9 @@ ${color3}$nodename \
 ${color3}${time %F %R} - \
 ${color2}[${color}${fs_free /}${color2}] \
 ${color2}[${color}${loadavg}${color2}] \
-${color2}[${color}${cpu cpu1}%,${cpu cpu2}%,${cpu cpu3}%,${cpu cpu4}%${color2},${color}${acpitemp}°C${color2}] \
+${color2}[${color}${cpu cpu1}%,${cpu cpu2}%,${cpu cpu3}%,${cpu cpu4}%${color2},\
+${color2}${color}${cpu cpu5}%,${cpu cpu6}%,${cpu cpu7}%,${cpu cpu8}%${color2}] \
+${color}${acpitemp}°C${color2} \
 ${color2}${color}$memperc%${color2}/${color}$swapperc% \
 ${color2}[${color}${battery BAT0}${color2}]
 
