@@ -27,6 +27,7 @@ nitrogen --restore
 xflux -z 30309 -k 2000
 setxkbmap -option caps:super
 
+xscreensaver -no-splash &
 nm-applet &
 owncloud &
 compton &
