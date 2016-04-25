@@ -2,16 +2,13 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    dmenu     # for app launcher
-    feh       # for background image
-    scrot     # for screenshot
-    libnotify # for notifications
-    tint2     # for taskbar, applet bar
-	conky     # for system status 
-
-    # xorg.utilmacros
-    # xorg.xcursorgen
-    # xorg.xcursorthemes
+    rofi         # for app launcher
+    feh          # for background image
+    scrot        # for screenshot
+    libnotify    # for notifications
+    tint2        # for taskbar, applet bar
+    conky        # for system status
+    xscreensaver # for desktop locking
   ];
 
   services.xserver = {
