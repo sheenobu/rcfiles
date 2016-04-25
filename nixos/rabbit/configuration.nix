@@ -62,31 +62,12 @@ in
      socat
      dropbox-cli
 
-     xorg.xbacklight
-     xorg.xwininfo
-
-     # desktop/libs
-     gtk
-     arc-gtk-theme
-     gtk-engine-murrine
-
-     # browsers
-     chromium
-     firefox
-
-     # desktop utilities
-     compton
-     gnome3.nautilus
-     xsel
-     baobab
-
      # programming utilities
      ack
      autojump
      go
      gcc
      git
-
      python35Packages.awscli
 
      # media
@@ -108,21 +89,14 @@ in
     alias vim=nvim
   '';
 
-  nixpkgs.config.pulseaudio = true;
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.chromium.enableWideVine = true;
-  nixpkgs.config.chromium.enablePepperFlash = true;
 
   services = {
     clamav = {
       updater.enable = true;
     };
     xserver = {
-      enable = true;
-      layout = "us";
       videoDrivers = [ "nvidia" ];
-      displayManager.lightdm.enable = true;
-      displayManager.kdm.enable = false;
       synaptics = {
         enable = true;
 
@@ -160,22 +134,7 @@ in
   # The NixOS release to be compatible with for stateful data such as databases.
   system.stateVersion = "16.03";
 
-  fonts = {
-     fontconfig = {
-        dpi = 120;
-        enable = true;
-     };
-     enableCoreFonts = true;
-     enableFontDir = true;
-     enableGhostscriptFonts = true;
-
-     fonts = with pkgs; [
-       corefonts  # Micrsoft free fonts
-       inconsolata  # monospaced
-       ubuntu_font_family  # Ubuntu fonts
-       unifont # some international languages
-     ];
-  };
+  fonts.fontconfig.dpi = 120;
 
   networking.extraHosts =
     ''
