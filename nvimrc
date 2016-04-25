@@ -25,6 +25,7 @@ NeoBundle    'scrooloose/syntastic'
 NeoBundle    'scrooloose/nerdtree'
 NeoBundle    'scrooloose/nerdcommenter'
 NeoBundle    'fatih/vim-go'
+NeoBundle    'bronson/vim-trailing-whitespace'
 
 "NeoBundle    ''
 "NeoBundle    ''
@@ -53,9 +54,9 @@ NeoBundleCheck
   set viewoptions=folds,options,cursor,unix,slash
   set virtualedit=onemore
 
-  
+
   " Setting up directories {{{
-  "     set backup 
+  "     set backup
         set undofile
         set undolevels=1000
         set undoreload=1000
@@ -69,7 +70,7 @@ NeoBundleCheck
       set shiftwidth=4                     " use indents of 4 spaces
       set tabstop=4                        " an indentation every four columns
       set softtabstop=4                    " let backspace delete indent
-      "set matchpairs+=<:>                 " match, to be used with % 
+      "set matchpairs+=<:>                 " match, to be used with %
       set pastetoggle=<F12>                " pastetoggle (sane indentation on pastes)
       "set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
 
@@ -95,5 +96,7 @@ NeoBundleCheck
   "}}}
   "Go" {{{
 	let g:go_fmt_command = "goimports"
+  "}}}
+  "Whitespace" {{{
   "}}}
 "}}}
