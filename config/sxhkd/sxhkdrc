@@ -87,7 +87,7 @@ super + shift + Return
 	urxvt -name furxvt
 
 super + space
-	dmenu_run
+    rofi -show run
 
 super + n
     chromium
