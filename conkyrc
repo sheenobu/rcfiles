@@ -41,7 +41,7 @@ conky.config = {
 
 conky.text = [[
 ${color3}$nodename \
-${color3}${time %F %R} - \
+${color3}${time %F %r} - \
 ${color2}[${color}${fs_free /}${color2}] \
 ${color2}[${color}${loadavg}${color2}] \
 ${color2}[${color}${cpu cpu1}%,${cpu cpu2}%,${cpu cpu3}%,${cpu cpu4}%${color2},\
