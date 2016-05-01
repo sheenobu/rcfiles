@@ -13,7 +13,6 @@ bspc config focused_border_color "#00ccFF"
 bspc monitor -d 1 2 3 4 5
 
 bspc rule -a Gimp desktop=^8 follow=on floating=on
-bspc rule -a Chromium desktop=^2
 bspc rule -a mplayer2 floating=on
 bspc rule -a furxvt floating=on
 bspc rule -a Kupfer.py focus=on
