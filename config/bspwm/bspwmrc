@@ -19,7 +19,7 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a mednafen manage=on border=on
 bspc rule -a pavucontrol floating=on
-
+bspc rule -a Cheese floating=on
 
 bspc config top_padding 27
 bspc config bottom_padding 0
