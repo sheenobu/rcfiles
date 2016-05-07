@@ -10,6 +10,7 @@ in
   imports =
     [
       /etc/nixos/hardware-configuration.nix
+      /etc/nixos/bspwm.service.nix
       /etc/nixos/desktop.nix
     ];
 

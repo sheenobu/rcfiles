@@ -1,5 +1,5 @@
 # Desktop config that isn't hardware specific
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
     rofi         # for app launcher
@@ -50,12 +50,13 @@
     };
 
     windowManager = {
-      bspwm.enable = true;
-      default = "bspwm";
+      default = "bspwm_patched";
+      bspwm_patched.enable = true;
     };
 
     desktopManager = {
       xterm.enable = false;
+      xfce.enable = false;
     };
   };
 
