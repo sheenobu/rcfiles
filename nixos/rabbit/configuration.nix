@@ -2,9 +2,9 @@
 let
     mednaffe = (pkgs.callPackage /etc/nixos/mednaffe.nix) {};
     r8168 = (pkgs.callPackage /etc/nixos/r8168.nix) {
-       kernel = pkgs.linux_4_3;
+       kernel = pkgs.linux;
     };
-    linuxPkgs = pkgs.linuxPackages_4_3;
+    linuxPkgs = pkgs.linuxPackages;
 in
 {
   imports =
