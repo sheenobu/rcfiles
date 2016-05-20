@@ -26,6 +26,7 @@ NeoBundle    'scrooloose/nerdtree'
 NeoBundle    'scrooloose/nerdcommenter'
 NeoBundle    'fatih/vim-go'
 NeoBundle    'bronson/vim-trailing-whitespace'
+NeoBundle    'elmcast/elm-vim'
 
 "NeoBundle    ''
 "NeoBundle    ''
@@ -98,5 +99,10 @@ NeoBundleCheck
 	let g:go_fmt_command = "goimports"
   "}}}
   "Whitespace" {{{
+  "}}}
+  "Elm" {{{
+	let g:elm_detailed_complete = 1
+	let g:elm_format_autosave = 1
+	let g:elm_syntastic_show_warnings = 1
   "}}}
 "}}}
