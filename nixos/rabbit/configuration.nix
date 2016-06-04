@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 let
     mednaffe = (pkgs.callPackage /etc/nixos/mednaffe.nix) {};
-    r8168 = (pkgs.callPackage /etc/nixos/r8168.nix) {
+    r8168 = (pkgs.callPackage /etc/nixos/r8168/r8168.nix) {
        kernel = pkgs.linux;
     };
     linuxPkgs = pkgs.linuxPackages;
@@ -10,7 +10,6 @@ in
   imports =
     [
       /etc/nixos/hardware-configuration.nix
-      /etc/nixos/bspwm.service.nix
       /etc/nixos/desktop.nix
     ];
 

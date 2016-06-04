@@ -1,6 +1,16 @@
 # Desktop config that isn't hardware specific
 { config, pkgs, ... }:
+let
+  fluxui = (pkgs.callPackage /etc/nixos/xfluxgui/gui.nix {
+    pexpect = pkgs.pythonPackages.pexpect;
+    pyGtkGlade = pkgs.pythonPackages.pyGtkGlade;
+    pygobject = pkgs.pythonPackages.pygobject;
+    pyxdg = pkgs.pythonPackages.pyxdg;
+    gnome_python = pkgs.gnome.gnome_python;
+  });
+in
 {
+
   environment.systemPackages = with pkgs; [
     rofi         # for app launcher
     feh          # for background image
@@ -15,14 +25,15 @@
     baobab       # for filesystem visualization
 
     # filesystem
-    xfce.thunar
-    xfce.thunar-archive-plugin
-    xfce.thunar-dropbox-plugin
-    xfce.thunar_volman
+    #xfce.thunar
+    #xfce.thunar-archive-plugin
+    #xfce.thunar-dropbox-plugin
+    #xfce.thunar_volman
 
     # utils
     xorg.xbacklight
     xorg.xwininfo
+    fluxui
 
     # theming
     gtk
@@ -50,8 +61,8 @@
     };
 
     windowManager = {
-      default = "bspwm_patched";
-      bspwm_patched.enable = true;
+      default = "bspwm";
+      bspwm.enable = true;
     };
 
     desktopManager = {
@@ -73,6 +84,5 @@
       unifont # some international languages
     ];
   };
-
 }
 
