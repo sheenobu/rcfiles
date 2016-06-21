@@ -54,7 +54,7 @@ in
     };
   };
 
-  #virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enable = true;
   virtualisation.docker = {
     enable = true;
     extraOptions = "--dns 8.8.8.8";
@@ -103,7 +103,7 @@ in
 
      # emulation
      mednaffe
-     #linuxPkgs.virtualbox
+     linuxPkgs.virtualbox
      wineUnstable
 
      # network media
@@ -154,6 +154,7 @@ in
         "networkmanager"
         "docker"
         "audio"
+        "vboxusers"
      ];
   };
 
