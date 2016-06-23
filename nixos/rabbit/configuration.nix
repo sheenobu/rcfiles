@@ -46,11 +46,21 @@ in
     loader.gummiboot.enable=true;
   };
 
+  nixpkgs.config = {
+    packageOverrides = pkgs: {
+      bluez = pkgs.bluez5;
+    };
+  };
+
   hardware = {
     opengl.driSupport32Bit = true;
     pulseaudio = {
       enable = true;
       support32Bit = true;
+      package = pkgs.pulseaudioFull;
+    };
+    bluetooth = {
+      enable = true;
     };
   };
 
