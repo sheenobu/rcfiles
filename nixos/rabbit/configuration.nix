@@ -100,7 +100,6 @@ in
      # programming utilities
      ack
      autojump
-     go
      gcc
      git
      python35Packages.awscli
