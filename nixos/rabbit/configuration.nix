@@ -112,7 +112,6 @@ in
 
      # emulation
      mednaffe
-     linuxPkgs.virtualbox
      wineUnstable
 
      # network media
