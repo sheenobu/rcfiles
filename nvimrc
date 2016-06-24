@@ -86,6 +86,12 @@ NeoBundleCheck
 	map <leader>nn :NERDTreeToggle<CR>
 	map <leader>nf :NERDTreeFind<CR>
   "}}}
+  "Syntastic" {{{
+	"Go" {{{
+	  let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+	  let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }"
+	 "}}}
+  "}}}
   "Numbers" {{{
 	set number
   "}}}
