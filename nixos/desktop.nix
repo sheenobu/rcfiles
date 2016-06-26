@@ -61,8 +61,9 @@ in
     };
 
     windowManager = {
-      default = "bspwm";
-      bspwm.enable = true;
+      default = "awesome";
+      openbox.enable = true;
+      awesome.enable = true;
     };
 
     desktopManager = {
