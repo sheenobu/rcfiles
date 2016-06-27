@@ -86,9 +86,26 @@ awful.util.spawn("setxkbmap -option caps:super")
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {}
+mywibox = {}
+
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ "Term", "Misc", "Floating" }, s, layouts)
+    tags[s] = awful.tag({ "Term", "Chat", "Misc", "Floating" }, s, layouts)
+
+    --
+    mywibox[s] = awful.wibox(
+       {position = "top", height = "30", screen = s})
+
+    mywibox[s].widgets = {
+        mysystray,
+    }
+
+    local right_layout = wibox.layout.fixed.horizontal()
+    if s == 1 then right_layout:add(wibox.widget.systray()) end
+    local layout = wibox.layout.align.horizontal()
+    layout:set_right(right_layout)
+
+    mywibox[s]:set_widget(layout)
 end
 -- }}}
 
@@ -186,6 +203,7 @@ clientkeys = awful.util.table.join(
             c.maximized_vertical   = not c.maximized_vertical
         end)
 )
+
 
 --
 -- Bind all key numbers to tags.
@@ -318,7 +336,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 autorun = true
 autorunApps =
 {
-   "tint2",
    "compton",
    "nm-applet",
    "fluxgui",
