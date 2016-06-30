@@ -297,7 +297,11 @@ awful.rules.rules = {
 	  }
 	},
     { rule = { class = "pinentry" },
-      properties = { floating = true } },
+      properties = {
+		  floating = true,
+		  ontop = true
+	  }
+    },
     { rule = { class = "gimp" },
       properties = { floating = true } },
     -- Set Firefox to always map on tags number 2 of screen 1.
