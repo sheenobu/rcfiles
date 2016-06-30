@@ -84,37 +84,34 @@ awful.util.spawn("setxkbmap -option caps:super")
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {}
-mywibox = {}
+topbars = {}
 
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
     tags[s] = awful.tag({ "Term", "Chat", "Misc", "Floating" }, s, layouts)
 
-    --
-    mywibox[s] = awful.wibox(
-       {position = "top", height = "30", screen = s})
+    -- Each screen has its own top bar 
+    topbars[s] = awful.wibox({position = "top", height = "30", screen = s})
 
-    mywibox[s].widgets = {
-        mysystray,
-    }
+	local systray = wibox.widget.systray()
 
-    local right_layout = wibox.layout.fixed.horizontal()
-    if s == 1 then right_layout:add(wibox.widget.systray()) end
-    local layout = wibox.layout.align.horizontal()
-    layout:set_right(right_layout)
+    local systray_layout = wibox.layout.fixed.horizontal()
+    if s == 1 then systray_layout:add(systray) end
+    
+    local main_layout = wibox.layout.align.horizontal()
+    main_layout:set_right(systray_layout)
+    
+    -- Add padding to the top bar
+    local padding = wibox.layout.margin()
+	padding:set_left(6)
+	padding:set_right(6)
+	padding:set_top(6)
+	padding:set_bottom(6)
+	padding:set_widget(main_layout)
 
-    mywibox[s]:set_widget(layout)
+    topbars[s]:set_widget(padding)
 end
 -- }}}
-
--- {{{ Menu
--- Create a laucher widget and a main menu
-myawesomemenu = {
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
-   { "restart", awesome.restart },
-   { "quit", awesome.quit }
-}
 
 -- {{{ Mouse bindings
 root.buttons(awful.util.table.join(
