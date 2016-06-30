@@ -286,8 +286,10 @@ awful.rules.rules = {
 		ontop = false,
 		focusable = false,
 		border_width = 0
+      },
 	  },
-    },
+	{ rule = { class = "Linphone" },
+	    properties = { floating = true } },
 	{ rule = { class = "Tint2" },
 	  properties = {
 		  border_width = 0,
