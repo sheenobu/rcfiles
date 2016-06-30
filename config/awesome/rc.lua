@@ -7,7 +7,6 @@ awful.rules = require("awful.rules")
 require("awful.autofocus")
 
 -- Lain
-
 local lain = require("lain")
 
 -- Widget and layout library
@@ -63,7 +62,6 @@ browser = "chromium"
 -- I suggest you to remap Mod4 to another key using xmodmap or other tools.
 -- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
-
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local layouts =
@@ -141,6 +139,7 @@ globalkeys = awful.util.table.join(
             awful.client.focus.byidx(-1)
             if client.focus then client.focus:raise() end
         end),
+        
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end),
@@ -305,9 +304,6 @@ awful.rules.rules = {
     },
     { rule = { class = "gimp" },
       properties = { floating = true } },
-    -- Set Firefox to always map on tags number 2 of screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { tag = tags[1][2] } },
 }
 -- }}}
 
