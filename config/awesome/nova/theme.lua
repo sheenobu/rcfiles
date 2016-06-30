@@ -12,17 +12,27 @@ theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
 theme.bg_systray    = theme.bg_normal
 
+theme.systray_icon_spacing = 5
+
 theme.fg_normal     = "#F2f2f2"
 theme.fg_focus      = "#00CCFF"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
+
+theme.titlebar_bg_normal = "#000000"
+theme.titlebar_bg_focus = "#00ccFF"
+
+theme.fg_normal = "#ffffff"
+theme.fg_focus = "#000000"
+
+theme.titlebar_height = 5
 
 theme.border_width  = 1
 theme.border_normal = "#a1a1a1"
 theme.border_focus  = "#00ccFF"
 theme.border_marked = "#91231c"
 
-theme.useless_gap_width = 10
+theme.useless_gap_width = 12
 
 -- There are other variable sets
 -- overriding the default one when
