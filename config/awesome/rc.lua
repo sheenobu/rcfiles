@@ -174,14 +174,6 @@ globalkeys = awful.util.table.join(
 	end),
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
-    awful.key({ modkey }, "x",
-              function ()
-                  awful.prompt.run({ prompt = "Run Lua code: " },
-                  mypromptbox[mouse.screen].widget,
-                  awful.util.eval, nil,
-                  awful.util.getdir("cache") .. "/history_eval")
-              end),
-
     -- rofi
     awful.key({ modkey }, "space", function() awful.util.spawn("rofi -show run") end)
 )
