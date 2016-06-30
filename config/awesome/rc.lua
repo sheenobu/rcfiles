@@ -197,6 +197,7 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
     awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end),
+    awful.key({ modkey, "Control" }, "t",      function (c) awful.titlebar.toggle(c)         end) 
     awful.key({ modkey,           }, "m",
         function (c)
             c.maximized_horizontal = not c.maximized_horizontal
@@ -326,12 +327,50 @@ client.connect_signal("manage", function (c, startup)
         end
     end
 
-	local layout = wibox.layout.margin()
-	layout:set_left(10)
-	layout:set_right(10)
-	layout:set_top(10)
-	layout:set_bottom(10)
+	if c.type == "normal" or c.type == "dialog" then
 
+		 -- buttons for the titlebar
+        local buttons = awful.util.table.join(
+            awful.button({ }, 1, function()
+                client.focus = c
+                c:raise()
+                awful.mouse.client.move(c)
+            end),
+            awful.button({ }, 3, function()
+                client.focus = c
+                c:raise()
+                awful.mouse.client.resize(c)
+            end)
+            )
+
+		local margin = wibox.layout.margin()
+		margin:set_left(10)
+
+        -- Widgets that are aligned to the left
+        local left_layout = wibox.layout.fixed.horizontal()
+		local title = awful.titlebar.widget.titlewidget(c)
+        left_layout:buttons(buttons)
+		title:set_align("left")
+		left_layout:add(title)
+
+        -- Widgets that are aligned to the right
+        local right_layout = wibox.layout.fixed.horizontal()
+        right_layout:add(awful.titlebar.widget.closebutton(c))
+
+        -- The title goes in the middle
+        local middle_layout = wibox.layout.flex.horizontal()
+        middle_layout:buttons(buttons)
+
+        -- Now bring it all together
+        local layout = wibox.layout.align.horizontal()
+        layout:set_left(left_layout)
+        layout:set_right(right_layout)
+        layout:set_middle(middle_layout)
+
+		margin:set_widget(layout)
+
+        awful.titlebar(c):set_widget(margin)
+	end
 end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
