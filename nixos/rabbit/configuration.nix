@@ -7,9 +7,10 @@
     ];
 
   nixpkgs.config = {
+    allowUnfree = true;
     packageOverrides = pkgs: {
       bluez = pkgs.bluez5;
-      inherit (import /etc/sheenobu-nixpkgs { inherit pkgs; inherit lib; }) sheenobupkgs;
+      inherit (import /etc/sheenobu-nixpkgs { inherit pkgs lib; }) sheenobupkgs;
     };
   };
 
@@ -91,9 +92,6 @@
   environment.shellInit = ''
     alias vim=nvim
   '';
-
-  nixpkgs.config.allowUnfree = true;
-
   services = {
     clamav = {
       updater.enable = true;
