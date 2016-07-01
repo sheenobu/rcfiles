@@ -31,6 +31,7 @@ let
 	  atomEnv = atomEnv;
     };
 
+    # not included
     r8168 = (pkgs.callPackage ./r8168/r8168.nix);
 
   };
