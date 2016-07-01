@@ -1,13 +1,5 @@
 # Desktop config that isn't hardware specific
 { config, pkgs, ... }:
-let
-    pexpect = pkgs.pythonPackages.pexpect;
-    pyGtkGlade = pkgs.pythonPackages.pyGtkGlade;
-    pygobject = pkgs.pythonPackages.pygobject;
-    pyxdg = pkgs.pythonPackages.pyxdg;
-    gnome_python = pkgs.gnome.gnome_python;
-  });
-in
 {
 
   environment.systemPackages = with pkgs; [

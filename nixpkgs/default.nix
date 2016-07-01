@@ -18,6 +18,15 @@ let
   sheenobupkgs = rec {
 
     # backport to 16.03
+    fluxui = (pkgs.callPackage ./xfluxgui/gui.nix {
+      pexpect = pkgs.pythonPackages.pexpect;
+      pyGtkGlade = pkgs.pythonPackages.pyGtkGlade;
+      pygobject = pkgs.pythonPackages.pygobject;
+      pyxdg = pkgs.pythonPackages.pyxdg;
+      gnome_python = pkgs.gnome.gnome_python;
+    });
+
+    # backport to 16.03
     mednaffe = (pkgs.callPackage ./mednaffe) {};
 
     # backport to 16.03
