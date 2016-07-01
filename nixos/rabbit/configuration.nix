@@ -1,36 +1,4 @@
 { config, pkgs, lib, ... }:
-let
-
-    # backport to 16.03, for makeSearchPathOutput
-    getOutput = output: pkg:
-      if pkg.outputUnspecified or false
-        then pkg.${output} or pkg.out or pkg
-        else pkg;
-
-    # backport to 16.03
-    makeSearchPathOutput = output: subDir: pkgs: lib.makeSearchPath subDir (map (getOutput output) pkgs);
-
-    # backport to 16.03
-    mednaffe = (pkgs.callPackage /etc/nixos/mednaffe.nix) {};
-
-    # not accepted yet
-    r8168 = (pkgs.callPackage /etc/nixos/r8168/r8168.nix) {
-       kernel = pkgs.linux;
-    };
-
-    # backport to 16.03
-    atomEnv = (pkgs.callPackage /etc/nixos/atom-env.nix) {
-      gconf = pkgs.gnome.GConf;
-      makeSearchPathOutput = makeSearchPathOutput;
-    };
-
-    # backport to 16.03
-    vscode = (pkgs.callPackage /etc/nixos/vscode.nix) {
-	atomEnv = atomEnv;
-    };
-
-    linuxPkgs = pkgs.linuxPackages;
-in
 {
   imports =
     [
@@ -38,18 +6,19 @@ in
       /etc/nixos/desktop.nix
     ];
 
-  boot = {
-    blacklistedKernelModules = [ "r8169" ];
-    extraModulePackages = [ r8168 ];
-    kernelPackages = linuxPkgs;
-    kernelParams = [ "ipv6.disable=1" ]; # "pcie_aspm=off" ];
-    loader.gummiboot.enable=true;
-  };
-
   nixpkgs.config = {
     packageOverrides = pkgs: {
       bluez = pkgs.bluez5;
+      inherit (import /etc/sheenobu-nixpkgs { inherit pkgs; inherit lib; }) sheenobupkgs;
     };
+  };
+
+  boot = {
+    blacklistedKernelModules = [ "r8169" ];
+    #extraModulePackages = [ sheenobupkgs.r8168 { kernel = pkgs.linux; } ];
+    kernelPackages = pkgs.linuxPackages;
+    kernelParams = [ "ipv6.disable=1" ]; # "pcie_aspm=off" ];
+    loader.gummiboot.enable=true;
   };
 
   hardware = {
@@ -103,7 +72,7 @@ in
      gcc
      git
      python35Packages.awscli
-     vscode
+     sheenobupkgs.vscode
 
      # media
      #spotify
@@ -111,7 +80,7 @@ in
      libdvdread
 
      # emulation
-     mednaffe
+     sheenobupkgs.mednaffe
      wineUnstable
 
      # network media
