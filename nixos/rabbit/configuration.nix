@@ -76,7 +76,7 @@
      git
      python35Packages.awscli
      sheenobupkgs.vscode
-
+     sheenobupkgs.riot
      # media
      #spotify
      steam

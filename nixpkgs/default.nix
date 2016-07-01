@@ -34,6 +34,8 @@ let
     # not included
     r8168 = (pkgs.callPackage ./r8168/r8168.nix);
 
+    # not included
+    riot = (pkgs.callPackage ./riot) {};
   };
 in pkgs // {
   inherit sheenobupkgs;
