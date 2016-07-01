@@ -1,7 +1,6 @@
 # Desktop config that isn't hardware specific
 { config, pkgs, ... }:
 let
-  fluxui = (pkgs.callPackage /etc/nixos/xfluxgui/gui.nix {
     pexpect = pkgs.pythonPackages.pexpect;
     pyGtkGlade = pkgs.pythonPackages.pyGtkGlade;
     pygobject = pkgs.pythonPackages.pygobject;
@@ -33,7 +32,7 @@ in
     # utils
     xorg.xbacklight
     xorg.xwininfo
-    fluxui
+    sheenobupkgs.fluxui
 
     # theming
     gtk
