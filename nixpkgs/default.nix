@@ -37,7 +37,7 @@ let
 
     # backport to 16.03
     vscode = (pkgs.callPackage ./vscode) {
-	  atomEnv = atomEnv;
+      atomEnv = atomEnv;
     };
 
     # not included
@@ -45,6 +45,9 @@ let
 
     # not included
     riot = (pkgs.callPackage ./riot) {};
+
+    # backport to 16.03
+    gosu = (pkgs.callPackage ./gosu) {};
   };
 in pkgs // {
   inherit sheenobupkgs;
