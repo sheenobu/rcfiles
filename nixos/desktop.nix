@@ -36,6 +36,8 @@
     firefox
   ];
 
+  environment.variables.BROWSER = "chromium";
+
   # audio support
   nixpkgs.config.pulseaudio = true;
 
