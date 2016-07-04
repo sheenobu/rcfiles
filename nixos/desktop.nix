@@ -49,6 +49,8 @@
     enable = true;
     layout = "us";
 
+    displayManager.lightdm.enable = true;
+
     windowManager = {
       default = "awesome";
       openbox.enable = true;
