@@ -48,6 +48,13 @@ let
 
     # backport to 16.03
     gosu = (pkgs.callPackage ./gosu) {};
+
+    # backport 3 to 16.03
+    grafana3 = (pkgs.callPackage ./grafana3) {};
+
+    # backport 1.0.1 to 16.03, 16.09
+    prometheus = (pkgs.callPackage ./prometheus) {};
+
   };
 in pkgs // {
   inherit sheenobupkgs;
