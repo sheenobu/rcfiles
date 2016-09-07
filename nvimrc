@@ -27,6 +27,8 @@ NeoBundle    'scrooloose/nerdcommenter'
 NeoBundle    'fatih/vim-go'
 NeoBundle    'bronson/vim-trailing-whitespace'
 NeoBundle    'elmcast/elm-vim'
+NeoBundle    'tikhomirov/vim-glsl'
+NeoBundle    'LnL7/vim-nix'
 
 "NeoBundle    ''
 "NeoBundle    ''
