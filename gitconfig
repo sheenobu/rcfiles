@@ -8,7 +8,7 @@
 [user]
 	email = sheena.artrip@gmail.com
 	name = Sheena Artrip
-	signingkey = 267F507D
+	signingkey = D1A6909D
 [core]
 	excludesfile = /home/sheenobu/.gitignore_global
 [push]
