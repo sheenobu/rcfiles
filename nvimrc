@@ -3,6 +3,9 @@
 if has('vim_starting')
  set nocompatible
  set runtimepath+=~/.nvim/bundle/neobundle.vim/
+ set runtimepath+=~/.nvim/bundle/vim-go
+ set runtimepath+=~/.nvim/bundle/vim-nix
+ set runtimepath+=~/.nvim/bundle/tomorrow-night
 endif
 
 call neobundle#begin(expand('~/.nvim/bundle/'))
@@ -10,7 +13,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "}}}
 
 NeoBundle     'jeetsukumaran/vim-markology'
-NeoBundle     'nonsense/tomorrow-night-vim-theme'
 "NeoBundle    'honza/vim-snippets'
 NeoBundle     'vim-scripts/JSON.vim'
 "NeoBundle     'godlygeek/tabular'
@@ -24,11 +26,9 @@ NeoBundle    'scrooloose/syntastic'
 "NeoBundle    'jaxbot/semantic-highlight'
 NeoBundle    'scrooloose/nerdtree'
 NeoBundle    'scrooloose/nerdcommenter'
-NeoBundle    'fatih/vim-go'
 NeoBundle    'bronson/vim-trailing-whitespace'
 NeoBundle    'elmcast/elm-vim'
 NeoBundle    'tikhomirov/vim-glsl'
-NeoBundle    'LnL7/vim-nix'
 
 "NeoBundle    ''
 "NeoBundle    ''
