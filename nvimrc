@@ -5,6 +5,7 @@ if has('vim_starting')
  set runtimepath+=~/.nvim/bundle/neobundle.vim/
  set runtimepath+=~/.nvim/bundle/vim-go
  set runtimepath+=~/.nvim/bundle/vim-nix
+ set runtimepath+=~/.nvim/bundle/vim-elm
  set runtimepath+=~/.nvim/bundle/tomorrow-night
 endif
 
