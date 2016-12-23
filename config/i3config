@@ -106,30 +106,28 @@ client.focused_inactive #252642 #373b41 #969896 #373b41   #252642
 client.unfocused        #cccccc #282a2e #969896 #282a2e   #cccccc
 client.urgent           #FB8B39 #cc6666 #ffffff #cc6666   #FB8B39
 
-font pango:Inconsolata 14
+font pango:Inconsolata 12, Awesome 12
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
 bar {
-  font pango:Inconsolata 14
+  font pango:Inconsolata 12, Awesome 12
+  tray_output none
   colors {
-    background #1d1f2100
+    background #1d1f21
     statusline #ffffff
     separator  #969896
     #workspace          border  backgr. text
     focused_workspace   #00A0F7 #00A0F7 #ffffff
     active_workspace    #373b41 #373b41 #ffffff
-    inactive_workspace  #282a2e00 #282a2e00 #ffffff
+    inactive_workspace  #282a2e #282a2e #ffffff
     urgent_workspace    #cc6666 #cc6666 #ffffff
   }
   position top
-  status_command i3status
+  status_command i3blocks -c ~/.config/i3bar
   i3bar_command i3bar -t
 }
 
 gaps inner 4
-gaps outer 2
+gaps outer 1
 
 exec compton
 exec nitrogen --restore
-
